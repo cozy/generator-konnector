@@ -1,10 +1,10 @@
 {
-  "name": "generator-konnector",
+  "name": "generator-cozy-konnector",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "Generates a cozy-konnector",
+  "description": "Generates a Cozy konnector",
   "author": "Cozy",
-  "url": "https://github.com/konnectors/generator",
+  "url": "https://github.com/cozy/generator-konnector",
   "files": [
     "app"
   ],
