@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "name": "<%= NAME %> connector",
+  "type": "konnector",
+  "language": "node",
+  "icon": "icon.png",
+  "slug": "<%= SLUG %>",
+  "source": "<%= SOURCE %>",
+  "editor": "<%= AUTHOR %>",
+  "vendor_link": "<%= LINK %>",
+  "categories": ["<%= CATEGORY %>"],
+  "fields": {
+    "login": {
+      "type": "text"
+    },
+    "password": {
+      "type": "password"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "data_types": [
+    "bill"
+  ],
+  "screenshots": [],
+  "permissions": <%- toJSON(PERMISSIONS) %>,
+  "developer": {
+    "name": "Cozy Cloud",
+    "url": "https://cozy.io"
+  },
+  "langs": ["fr", "en"],
+  "locales": {
+    "fr": {
+      "short_description": "<%= SHORT_DESCRIPTION_FR %>",
+      "long_description": "<%= LONG_DESCRIPTION_FR %>",
+      "permissions": <%- toJSON(PERMISSION_DESCRIPTIONS_FR) %>
+    },
+    "en": {
+      "short_description": "<%= SHORT_DESCRIPTION_EN %>",
+      "long_description": "<%= LONG_DESCRIPTION_EN %>",
+      "permissions": <%- toJSON(PERMISSION_DESCRIPTIONS_EN) %>
+    }
+  },
+  "manifest_version": "2"
+}
