@@ -4,7 +4,7 @@ Konnector generator
 This is a Yeoman generator to create Cozy konnectors.
 
 ```
-npm install -g generator-cozy-konnector
+npm install -g yo generator-cozy-konnector
 yo cozy-konnector
 ```
 
