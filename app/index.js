@@ -178,5 +178,18 @@ module.exports = class extends Generator {
       }
     })
   }
+
+  async install() {
+    console.log('Setting up git repository ...')
+    this.spawnCommandSync('git', ['init'])
+    this.spawnCommandSync('git', ['add', '.'])
+    this.spawnCommandSync('git', ['commit', '-m', '"first commit"'])
+    console.log('Installing dependencies...')
+    this.npmInstall().then(() => {
+      console.log('Done ✨')
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
 };
 
