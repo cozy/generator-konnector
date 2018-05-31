@@ -1,6 +1,6 @@
-var Generator = require('yeoman-generator');
 const promisify = require('util').promisify
 const glob = promisify(require('glob'))
+const Generator = require('yeoman-generator');
 const updateNotifier = require('update-notifier')
 
 const pkg = require('../package.json');
@@ -171,7 +171,7 @@ module.exports = class extends Generator {
     const g = this.templatePath('**/*')
     const files = await glob(g, { dot: true })
     files.forEach(filename => {
-      const dest = `./${this.data.SLUG}` + filename.replace(root, '')
+      const dest = `./${filename.replace(root, '')}`
       this.fs.copyTpl(filename, dest, this.data)
       if (filename.match(/package.json/) || filename.match(/manifest.konnector/)) {
         prettifyJson(this.fs, dest)
