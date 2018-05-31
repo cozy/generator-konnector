@@ -8,6 +8,8 @@ npm install -g generator-cozy-konnector
 yo cozy-konnector
 ```
 
+<img src='https://i.imgur.com/qLJazpt.png' />
+
 What's Cozy?
 ------------
 
