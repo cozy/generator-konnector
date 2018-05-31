@@ -98,10 +98,48 @@ module.exports = class extends Generator {
     this.data = answers
     this.data.toJSON = x => JSON.stringify(x, null, 2)
 
-    const permissions = await this.prompt([
-      { name: 'permissions', message: 'Permissions required by your application (separated by commas)', default: 'io.cozy.bank.operations,io.cozy.bills'}
+    const permissionsAnswers = await this.prompt([
+      {
+        name: 'permissions',
+        message: 'Permissions required by your application (separated by commas)',
+        choices: [
+          {
+            name: 'io.cozy.files',
+            message: 'io.cozy.files',
+            checked: true
+          },
+          {
+            name: 'io.cozy.bills',
+            message: 'io.cozy.bills',
+            checked: true
+          },
+          {
+            name: 'io.cozy.bank.operations',
+            message: 'io.cozy.bank.operations',
+            checked: false
+          },
+          {
+            name: 'others',
+            message: 'others',
+            checked: false
+          },
+        ],
+        type: 'checkbox'
+      }
     ])
-    const permissionNames = await this.prompt(permissions.permissions.split(',').map(x => ({
+
+    const permissions = permissionsAnswers.permissions
+    if (permissions.indexOf('others') > -1) {
+      const otherPermissions = await this.prompt([{
+        message: 'Type other permissions separated by comma',
+        name: 'permissions'
+      }])
+      permissions.push.apply(permissions, otherPermissions.permissions.split(','))
+      const otherIndex = permissions.indexOf('others')
+      permissions.splice(otherIndex, 1)
+    }
+
+    const permissionNames = await this.prompt(permissions.map(x => ({
       name: dot2dash(x),
       message: `Name for ${x}`,
       default: getDefaultName(x)
