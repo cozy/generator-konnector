@@ -181,7 +181,6 @@ module.exports = class extends Generator {
       { type: dash2dot(dashedDoctype) }
     ]))
     this.data.GITHUB_SLUG = this.data.SOURCE.replace(/https:\/\/(www\.)?github.com\//, '').replace(/\.git$/, '')
-    console.log(this.data.GITHUB_SLUG)
   }
   
   async writing() {
