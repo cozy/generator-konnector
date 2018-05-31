@@ -8,7 +8,7 @@
   "source": "<%= SOURCE %>",
   "editor": "<%= AUTHOR %>",
   "vendor_link": "<%= LINK %>",
-  "categories": ["<%= CATEGORY %>"],
+  "categories": <%- toJSON(CATEGORIES) %>,
   "fields": {
     "login": {
       "type": "text"
