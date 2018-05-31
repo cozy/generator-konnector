@@ -26,13 +26,13 @@ const requiredInfos = [
     pageSize: availableCategories.length,
     validate: res => res.length > 0
   },
-  { name: 'LINK', message: 'Link to the main page of the vendor', default: 'http://cozy.io' },
-  { name: 'SHORT_DESCRIPTION_EN', message: 'A short description in English', default: 'Long description' },
-  { name: 'LONG_DESCRIPTION_EN', message: 'A longer description in English', default: 'Short description' },
-  { name: 'SHORT_DESCRIPTION_FR', message: 'A short description in French', default: 'Longue description' },
+  { name: 'NAME', message: 'Name of your Connector (name of the vendor usually)' },
+  { name: 'SLUG', message: 'Desired slug for your connector (lowercase, only letters)' },
+  { name: 'LINK', message: 'Link to the main page of the vendor' },
+  { name: 'SHORT_DESCRIPTION_EN', message: 'A short description in English', default: 'Short description' },
+  { name: 'LONG_DESCRIPTION_EN', message: 'A longer description in English', default: 'Long description' },
+  { name: 'SHORT_DESCRIPTION_FR', message: 'A short description in French', default: 'Description longue' },
   { name: 'LONG_DESCRIPTION_FR', message: 'A longer description in French', default: 'Description courte' },
-  { name: 'NAME', message: 'Name of your Connector', default: 'My super connector' },
-  { name: 'SLUG', message: 'Desired slug for your connector', default: 'my-konnector' },
   { name: 'SOURCE', message: 'Git repository of your connector', default: 'https://github.com/konnectors/my-konnector.git' }
 ]
 
