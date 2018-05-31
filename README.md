@@ -15,6 +15,11 @@ yo cozy-konnector
 - [x] Ask for values to put in `manifest.konnector`, `.travis.yml` and `package.json`
 - [x] `npm install` at the end
 - [x] `git init` the repository
+- [x] Check for updates at the start
+
+## npm releases
+
+Releases are automated through `semantic-release` and Travis on this repository.
 
 What's Cozy?
 ------------
