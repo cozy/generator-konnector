@@ -6,7 +6,7 @@ const updateNotifier = require('update-notifier')
 const pkg = require('../package.json');
 
 const requiredInfos = [
-  { name: 'AUTHOR', message: 'Name of the author ?', default: 'Patrick Browne' },
+  { name: 'AUTHOR', message: 'Name of the author ?', default: 'Cozy' },
   { name: 'CATEGORY', message: 'Category of the konnector (other, transport, services)', default: 'transport' },
   { name: 'LINK', message: 'Link to the main page of the vendor', default: 'http://cozy.io' },
   { name: 'SHORT_DESCRIPTION_EN', message: 'A short description in English', default: 'Long description' },
