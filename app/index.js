@@ -113,8 +113,10 @@ const checkUpdate = () =>
           reject(err)
         }
         else {
-          console.log(`Update available ${update.current} -> ${update.latest}`)
-          console.log(`Please upgrade: npm i -g ${update.name}`)
+          if (update && update.current !== update.latest) {
+            console.log(`Update available ${update.current} -> ${update.latest}`)
+            console.log(`Please upgrade: npm i -g ${update.name}`)
+          }
           resolve()
         }
       }
