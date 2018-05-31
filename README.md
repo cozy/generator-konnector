@@ -10,6 +10,12 @@ yo cozy-konnector
 
 <img src='https://i.imgur.com/qLJazpt.png' />
 
+## Features
+
+- [x] Ask for values to put in `manifest.konnector`, `.travis.yml` and `package.json`
+- [x] `npm install` at the end
+- [x] `git init` the repository
+
 What's Cozy?
 ------------
 
