@@ -1,6 +1,6 @@
 {
   "name": "generator-cozy-konnector",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "license": "MIT",
   "description": "Generates a Cozy konnector",
   "author": "Cozy",
@@ -17,6 +17,15 @@
     "yeoman-generator": "^2.0.5"
   },
   "devDependencies": {
-    "semantic-release": "^15.5.0"
+    "semantic-release": "^15.5.0",
+    "travis-deploy-once": "^5.0.0"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cozy/generator-konnector.git"
   }
 }
