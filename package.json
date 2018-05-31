@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "glob": "^7.1.2",
+    "update-notifier": "^2.5.0",
     "yeoman-generator": "^2.0.5"
   }
 }

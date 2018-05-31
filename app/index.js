@@ -1,6 +1,9 @@
 var Generator = require('yeoman-generator');
 const promisify = require('util').promisify
 const glob = promisify(require('glob'))
+const updateNotifier = require('update-notifier')
+
+const pkg = require('../package.json');
 
 const requiredInfos = [
   { name: 'AUTHOR', message: 'Name of the author ?', default: 'Patrick Browne' },
@@ -84,6 +87,8 @@ const prettifyJson = (fs, dest) => {
 
 module.exports = class extends Generator {
   async prompting() {
+    updateNotifier({pkg}).notify()
+
     const prompts = requiredInfos.map(x => ({
       type: 'input',
       ...x
