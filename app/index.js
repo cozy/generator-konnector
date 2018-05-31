@@ -103,9 +103,26 @@ const prettifyJson = (fs, dest) => {
   fs.writeJSON(dest, data, null, 2)
 }
 
+const checkUpdate = () =>
+  new Promise((resolve, reject) =>
+    updateNotifier({
+      pkg,
+      updateCheckInterval: 0,
+      callback: (err, update) => {
+        if (err) {
+          reject(err)
+        }
+        else {
+          console.log(`Update available ${update.current} -> ${update.latest}`)
+          console.log(`Please upgrade: npm i -g ${update.name}`)
+          resolve()
+        }
+      }
+    }))
+
 module.exports = class extends Generator {
   async prompting() {
-    updateNotifier({pkg}).notify()
+    await checkUpdate()
 
     const prompts = requiredInfos.map(x => ({
       type: 'input',
